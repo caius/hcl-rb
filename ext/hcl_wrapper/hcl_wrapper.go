@@ -5,7 +5,7 @@ import (
 	"github.com/hashicorp/hcl/v2/hclsimple"
 )
 
-// export hcl_parse
+//export hcl_parse
 func hcl_parse(data string) interface{} {
 	fmt.Printf("data [%v, %T]", data, data)
 	var value interface{}
