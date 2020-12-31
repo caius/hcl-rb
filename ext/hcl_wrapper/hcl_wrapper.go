@@ -2,15 +2,18 @@ package main
 
 import (
 	"C"
-	"fmt"
+	"github.com/hashicorp/hcl/v2/hclsimple"
 )
 
-//export Add
-func Add(a, b int) int {
-	return a + b
+//export HclParse
+func HclParse(input string) interface{} {
+	var output interface{}
+
+	output = hclsimple.Decode("input.hcl", []byte(input), nil, &output)
+
+	return output
 }
 
 func main() {
 	// Noop
-	fmt.Printf("Hello\n")
 }

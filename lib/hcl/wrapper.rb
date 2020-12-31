@@ -9,6 +9,6 @@ module Hcl
 
     ffi_lib File.expand_path("../#{FFI.map_library_name("hcl_wrapper")}", __dir__)
 
-    # attach_function :HclParse, [:string], :void
+    attach_function :hcl_parse, :HclParse, [:string], :string
   end
 end

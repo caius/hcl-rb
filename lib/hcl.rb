@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
 require "hcl/version"
-# require "hcl/wrapper"
-require "ffi"
+require "hcl/wrapper"
 
 module Hcl
-  extend FFI::Library
+  module_function
 
-  ffi_lib File.expand_path("#{FFI.map_library_name("hcl_wrapper")}", __dir__)
-
-  attach_function :Add, [:int, :int], :int
+  def parse(hcl_io)
+    Wrapper.hcl_parse(hcl_io.read)
+  end
 end
