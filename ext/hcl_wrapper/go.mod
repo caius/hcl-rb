@@ -1,4 +1,4 @@
-module github.com/caius/hcl-rb/go
+module github.com/caius/hcl-rb/ext/hcl_wrapper
 
 go 1.15
 
