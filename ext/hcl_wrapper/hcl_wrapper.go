@@ -1,13 +1,13 @@
 package main
 
 import (
+	"C"
 	"fmt"
-	// "github.com/hashicorp/hcl/v2/hclsimple"
 )
 
-//export HclParse
-func HclParse(data string) {
-	fmt.Printf("data [%v, %T]\n", data, data)
+//export Add
+func Add(a, b int) int {
+	return a + b
 }
 
 func main() {
