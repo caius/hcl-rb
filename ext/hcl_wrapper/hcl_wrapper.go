@@ -2,18 +2,15 @@ package main
 
 import (
 	"fmt"
-	"github.com/hashicorp/hcl/v2/hclsimple"
+	// "github.com/hashicorp/hcl/v2/hclsimple"
 )
 
-//export hcl_parse
-func hcl_parse(data string) interface{} {
-	fmt.Printf("data [%v, %T]", data, data)
-	var value interface{}
-	value = hclsimple.Decode("example.hcl", []byte(data), nil, &value)
-	fmt.Printf("value [%v, %T]", value, value)
-	return value
+//export HclParse
+func HclParse(data string) {
+	fmt.Printf("data [%v, %T]\n", data, data)
 }
 
 func main() {
 	// Noop
+	fmt.Printf("Hello\n")
 }
