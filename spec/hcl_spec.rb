@@ -1,9 +1,13 @@
 RSpec.describe Hcl do
   it "has a version number" do
-    expect(Hcl::VERSION).not_to be nil
+    expect(described_class::VERSION).not_to be nil
   end
 
-  it "adds two numbers together in go" do
-    expect(Hcl.Add(1, 2)).to eq(3)
+  it "parses HCL into data" do
+    input = StringIO.new(<<~HCL2)
+      io_mode = "async"
+    HCL2
+
+    expect(described_class.parse(input)).to eq({"io_mode" => "async"})
   end
 end
