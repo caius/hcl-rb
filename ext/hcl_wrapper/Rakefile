@@ -1,0 +1,19 @@
+# frozen_string_literal: true
+
+require "ffi"
+require "rake/clean"
+require "rubygems"
+
+GO = "go"
+OUTPUT = FFI.map_library_name("hcl_wrapper")
+OUTPUT_DIR = "../../lib"
+SRC = "hcl_wrapper.go"
+
+task :default => [:build]
+
+desc "Build the shared library"
+task :build => [OUTPUT]
+
+task OUTPUT => [SRC] do
+  sh "#{GO} build -buildmode=c-shared -o #{OUTPUT_DIR}/#{OUTPUT} #{SRC}"
+end
