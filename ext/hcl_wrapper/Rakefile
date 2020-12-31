@@ -11,10 +11,10 @@ SRC = "hcl_wrapper.go"
 
 CLEAN.include("#{OUTPUT_DIR}/#{OUTPUT}")
 
-task :default => [:build]
+task default: [:build]
 
 desc "Build the shared library"
-task :build => [OUTPUT]
+task build: [OUTPUT]
 
 task OUTPUT => [SRC] do
   sh "#{GO} build -buildmode=c-shared -o #{OUTPUT_DIR}/#{OUTPUT} #{SRC}"

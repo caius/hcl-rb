@@ -23,7 +23,7 @@ end
 
 RSpec::Core::RakeTask.new(:spec)
 
-task :spec => :"ext:build"
-task :clean => :"ext:clean"
+task spec: :"ext:build"
+task clean: :"ext:clean"
 
-task :default => :spec
+task default: :spec
