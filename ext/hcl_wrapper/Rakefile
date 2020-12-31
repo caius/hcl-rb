@@ -9,6 +9,8 @@ OUTPUT = FFI.map_library_name("hcl_wrapper")
 OUTPUT_DIR = "../../lib"
 SRC = "hcl_wrapper.go"
 
+CLEAN.include("#{OUTPUT_DIR}/#{OUTPUT}")
+
 task :default => [:build]
 
 desc "Build the shared library"
