@@ -11,3 +11,10 @@
 .rspec_status
 
 *.log
+*.so
+*.dylib
+*.dSYM
+*.la
+*.lo
+*.o
+*.rbc
